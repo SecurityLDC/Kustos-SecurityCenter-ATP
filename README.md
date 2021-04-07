@@ -3,15 +3,13 @@ Advanced Hunting queries on Kustos
 Structure (temp)
 =================
 <!--ts-->
-   * [Sobre](#Sobre)
-   * [Tabela de Conteudo](#tabela-de-conteudo)
-   * [Instalação](#instalacao)
-   * [Como usar](#como-usar)
-      * [Pre Requisitos](#pre-requisitos)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-   * [Tests](#testes)
-   * [Tecnologias](#tecnologias)
+   * [About - TBC](#Sobre)
+   * [List of best Practicies - TBC](#tabela-de-conteudo)
+   * [Scripts - TBC](#instalacao)
+      * [Script 1](#pre-requisitos)
+      * [Script 2](#local-files)
+      * [Script n](#remote-files)
 <!--te-->
+<h4 align="center"> 
+	🚧  React Select 🚀 Em construção...  🚧
+</h4>
