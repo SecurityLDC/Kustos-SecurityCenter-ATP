@@ -12,13 +12,11 @@ Structure (temp)
       * [Script n](#script3)
 <!--te-->
 <h4 align="center"> 
-	🚧  RWorking in Progress
+	Working in Progress
 </h4>
 About
-============
 
 List of best Practicies - TBC
-
 
 Scripts - TBC
 
