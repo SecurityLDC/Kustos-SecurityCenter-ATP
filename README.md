@@ -2,7 +2,7 @@
 Advanced Hunting queries on Kustos
 Structure (temp)
 =================
-![Badge](LDC)
+
 <!--ts-->
    * [About - TBC](#Sobre)
    * [List of best Practicies - TBC](#tabela-de-conteudo)
