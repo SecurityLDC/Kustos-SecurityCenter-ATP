@@ -11,5 +11,5 @@ Structure (temp)
       * [Script n](#remote-files)
 <!--te-->
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  RWorking in Progress
 </h4>
