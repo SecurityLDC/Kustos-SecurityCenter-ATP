@@ -1,0 +1,6 @@
+DeviceFileEvents
+//| where FileName =~ "PRE_GXWS.jar"
+//| where FileName =~ "javaw.exe"
+//| project DeviceName, FileName , FolderPath, InitiatingProcessFolderPath, InitiatingProcessAccountName, InitiatingProcessFileName, InitiatingProcessVersionInfoProductName, InitiatingProcessCommandLine    
+| where InitiatingProcessVersionInfoProductName contains "Java(TM)"
+| project DeviceName, FileName , FolderPath, InitiatingProcessVersionInfoProductName

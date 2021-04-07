@@ -1,0 +1,5 @@
+let IPs = pack_array("109.176.117.11", "5.100.251.106", 
+"217.23.5.20", "5.135.199.19", "172.217.30.68"); 
+DeviceNetworkEvents
+| where Timestamp > ago(7d) 
+| where RemoteIP in(IPs)

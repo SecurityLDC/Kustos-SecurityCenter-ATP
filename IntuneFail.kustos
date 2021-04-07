@@ -1,0 +1,16 @@
+//Script1
+DeviceNetworkEvents
+| where  RemoteUrl has_any("officeconfig.msocdn.com", "login.microsoftonline.com", "config.office.com", "graph.windows.net", "enterpriseregistration.windows.net", "manage.microsoft.com", "winatp-gw-neu.microsoft.com", "winatp-gw-weu.microsoft.com", "settings-win.data.microsoft.com", "ctldl.windowsupdate.com", "eu.vortex-win.data.microsoft.com", "eu-v20.events.data.microsoft.com", "notify.windows.com", "wns.windows.com", "blob.core.windows.net", "smartscreen-prod.microsoft.com", "smartscreen.microsoft.com", "checkappexec.microsoft.com", "urs.microsoft.com", "wdcp.microsoft.com", "wdcpalt.microsoft.com", "wd.microsoft.com", "msdl.microsoft.com")
+| where ActionType == 'ConnectionFailed'
+| where Timestamp > ago(2d)
+//| summarize Failures = count() by RemoteUrl
+| project Timestamp, DeviceName, ActionType, LocalIP, RemoteUrl, RemotePort, RemoteIP 
+
+//Script2
+DeviceNetworkEvents
+//| where  RemoteUrl has_any("officeconfig.msocdn.com", "login.microsoftonline.com", "config.office.com", "graph.windows.net", "enterpriseregistration.windows.net", "manage.microsoft.com", "winatp-gw-neu.microsoft.com", "winatp-gw-weu.microsoft.com", "settings-win.data.microsoft.com", "ctldl.windowsupdate.com", "eu.vortex-win.data.microsoft.com", "eu-v20.events.data.microsoft.com", "notify.windows.com", "wns.windows.com", "blob.core.windows.net", "smartscreen-prod.microsoft.com", "smartscreen.microsoft.com", "checkappexec.microsoft.com", "urs.microsoft.com", "wdcp.microsoft.com", "wdcpalt.microsoft.com", "wd.microsoft.com", "msdl.microsoft.com")
+| where ActionType == "ConnectionFailed"
+//| where DeviceName  has "NLTAAR-ADMD-012"
+| where RemoteIP == "20.41.1.0"
+|extend Ipv4 = format_ipv4(LocalIP,24)
+| summarize Failures = count() by Ipv4

@@ -1,0 +1,8 @@
+let Apps = pack_array("Teams.exe", "teams.exe"); 
+DeviceNetworkEvents
+| where Timestamp > ago(10m) 
+| where InitiatingProcessFileName in(Apps)
+//| where ActionType == "ConnectionFailed"
+//| where ActionType == "ConnectionSuccess"
+| summarize Qtde=count() by Status=ActionType
+//| project Timestamp, DeviceName, ActionType, InitiatingProcessFileName, RemoteUrl, RemoteIP

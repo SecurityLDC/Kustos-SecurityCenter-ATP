@@ -1,0 +1,13 @@
+//let IPs = pack_array("emea.presence.teams.microsoft.com","noam.presence.teams.microsoft.com","noamdf.presence.teams.microsoft.com"); 
+//DeviceNetworkEvents
+//| where Timestamp > ago(4h) 
+//| where RemoteUrl in(IPs)
+//| where ActionType == "ConnectionFailed"
+//| where ActionType == "ConnectionSuccess"
+//| project ActionType, RemoteIP
+//| project Timestamp,DeviceName, ActionType, RemoteIP, RemoteUrl, LocalIP, LocalIPType, RemoteIPType, InitiatingProcessFileName, InitiatingProcessAccountUpn 
+DeviceNetworkEvents
+| where Timestamp > ago(4h) 
+| where InitiatingProcessFileName =~ "Teams.exe"
+| where ActionType == "ConnectionFailed"
+| project DeviceName, ActionType, InitiatingProcessFileName, RemoteUrl, RemoteIP
